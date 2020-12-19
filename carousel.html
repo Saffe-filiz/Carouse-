@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="carousel.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			<div class="navigation">
+				<nav>
+					<ul>
+						<li class="active">All</li>
+						<li>Photography</li>
+						<li>Fashion</li>
+						<li>Sculpture</li>
+					</ul>
+				</nav>
+			</div>
+			<span class="next-btn">
+				<button :disabled="current_box < 0" @click="current_box--"><img src="arrow.svg"></button>
+				<button :disabled="current_box == total_length -2" @click="current_box++"><img src="arrow.svg"></button>
+			</span>
+			<div class="cart-slide">
+				<div class="carousel">
+                <div class="slider" :style="{ width: total_width + 200 + 'px', marginLeft: next_box}">
+                    <ul ref="li">
+                       <li v-for="(content, index) in 9">
+                       	<span class="cart">
+					<span class="cart-image">
+						<img src="image2.png">
+					</span>
+					<span class="cart-title">
+						<h1>Britta Clay Art</h1>
+						<p>Sat, 24 October 2020</p>
+					</span>
+				</span>
+                       </li>        
+                    </ul>
+                </div>
+            </div>
+			</div>
+			<span class="more-btn">
+				<button>View more</button>
+			</span>
+		</div>
+	</div>
+
+</body>
+</html>
